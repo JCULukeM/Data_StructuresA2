@@ -22,11 +22,25 @@ def main():
 
 
 def run_two_player_mode():
+    game_not_done = True
+    board = Connect3Board(3, 3)
+    while game_not_done:
+        print(board)
+        whose_turn = board.get_whose_turn()
+        token_choice = int(input("Choose a row to place a {}: ".format(whose_turn)))
+        board.add_token(token_choice)
+        if board.get_winner() is not None:
+            winner = board.get_winner()
+            game_not_done = False
+            print(board)
+            print("Player {} won".format(winner))
+
     # for you to complete...
     pass
 
 
 def run_ai_mode():
+
     # for you to complete...
     pass
 
